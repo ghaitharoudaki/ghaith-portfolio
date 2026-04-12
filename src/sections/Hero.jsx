@@ -1,6 +1,6 @@
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import { ArrowDown, Code2, ExternalLink, Mail } from "lucide-react";
+import { ArrowDown, Mail } from "lucide-react";
 
 const techBadges = [
   { label: "React", color: "text-ocean-500 border-ocean-200 bg-ocean-50" },
@@ -57,7 +57,7 @@ export default function Hero() {
       <div className="absolute top-1/3 left-1/3 w-[300px] h-[300px] rounded-full bg-ocean-300/10 blur-2xl pointer-events-none animate-pulse-slow" />
 
       {/* Main content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-24 pb-16 flex flex-col items-center text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-32 pb-16 flex flex-col items-center text-center">
 
         {/* Status badge */}
         <motion.div
@@ -110,8 +110,8 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="max-w-xl text-slate-500 text-base md:text-lg leading-relaxed mb-10"
         >
-          I build fast, beautiful, and secure web experiences. 
-          Combining frontend craftsmanship with a cybersecurity mindset 
+          I build fast, beautiful, and secure web experiences.
+          Combining frontend craftsmanship with a cybersecurity mindset
           to create applications that look great and stay safe.
         </motion.p>
 
@@ -137,18 +137,25 @@ export default function Hero() {
         </motion.div>
 
         {/* Social links */}
-{socialLinks.map(({ svg, href, label }) => (
-  <a
-    key={label}
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label={label}
-    className="p-3 rounded-xl border border-slate-200 text-slate-500 hover:border-ocean-300 hover:text-ocean-500 hover:bg-ocean-50 transition-all duration-300"
-  >
-    {svg}
-  </a>
-))}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="flex flex-row items-center justify-center gap-4 mb-16"
+        >
+          {socialLinks.map(({ svg, href, label }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="p-3 rounded-xl border border-slate-200 text-slate-500 hover:border-ocean-300 hover:text-ocean-500 hover:bg-ocean-50 transition-all duration-300"
+            >
+              {svg}
+            </a>
+          ))}
+        </motion.div>
 
         {/* Tech badges */}
         <motion.div
