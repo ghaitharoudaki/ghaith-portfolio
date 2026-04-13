@@ -7,10 +7,18 @@ const experiences = [
     type: "work",
     title: "Finance & Operations Intern",
     organization: "Chocolate Bar",
-    period: "August 2022 – September 2022",
+    period: "August 22 – September 22",
     description:
       "Completed a 200-hour intensive internship rotating through Finance, HR, and Supply Chain Management departments. Demonstrated strong teamwork and communication skills while consistently exceeding performance expectations.",
   },
+  {
+    type: "work",
+    title: "Freelance Frontend Developer",
+    organization: "Self-Employed",
+    period: "2025 – 2026",
+    description:
+      "Provided freelance frontend development services for various clients, Mainly in the MENA region.",
+  }
 ];
 
 const education = [

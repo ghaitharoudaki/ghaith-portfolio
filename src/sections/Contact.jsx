@@ -66,7 +66,7 @@ export default function Contact() {
               Let's work together
             </h3>
             <p className="text-slate-500 leading-relaxed mb-8">
-              I'm currently open to new opportunities — whether it's a full-time role,
+              I'm currently open to new opportunities — whether it's a part-time role,
               freelance project, or just a conversation about tech and cybersecurity.
               My inbox is always open!
             </p>
