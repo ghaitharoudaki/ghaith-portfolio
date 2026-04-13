@@ -57,14 +57,14 @@ export default function Hero() {
       <div className="absolute top-1/3 left-1/3 w-[300px] h-[300px] rounded-full bg-ocean-300/10 blur-2xl pointer-events-none animate-pulse-slow" />
 
       {/* Main content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-32 pb-16 flex flex-col items-center text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-24 pb-8 flex flex-col items-center text-center">
 
         {/* Status badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-ocean-200 bg-ocean-50 text-ocean-600 text-sm font-medium"
+          className="mb-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-ocean-200 bg-ocean-50 text-ocean-600 text-sm font-medium"
         >
           <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
           Available for opportunities
@@ -75,7 +75,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-7xl font-bold text-slate-900 tracking-tight mb-4"
+          className="text-4xl md:text-7xl font-bold text-slate-900 tracking-tight mb-3"
         >
           Ghaith{" "}
           <span className="text-gradient">Aroudaki</span>
@@ -86,7 +86,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-xl md:text-2xl font-mono text-slate-500 mb-6 h-8"
+          className="text-lg md:text-2xl font-mono text-slate-500 mb-4 h-8"
         >
           <TypeAnimation
             sequence={[
@@ -108,7 +108,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="max-w-xl text-slate-500 text-base md:text-lg leading-relaxed mb-10"
+          className="max-w-xl text-slate-500 text-sm md:text-lg leading-relaxed mb-8"
         >
           I build fast, beautiful, and secure web experiences.
           Combining frontend craftsmanship with a cybersecurity mindset
@@ -120,7 +120,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="flex flex-wrap items-center justify-center gap-4 mb-12"
+          className="flex flex-wrap items-center justify-center gap-4 mb-8"
         >
           <a
             href="#projects"
@@ -141,7 +141,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex flex-row items-center justify-center gap-4 mb-16"
+          className="flex flex-row items-center justify-center gap-4 mb-8"
         >
           {socialLinks.map(({ svg, href, label }) => (
             <a
