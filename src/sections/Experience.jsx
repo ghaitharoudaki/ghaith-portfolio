@@ -15,7 +15,7 @@ const experiences = [
     type: "work",
     title: "Freelance Frontend Developer",
     organization: "Self-Employed",
-    period: "2025 – 2026",
+    period: "2025 – Present",
     description:
       "Provided freelance frontend development services for various clients, Mainly in the MENA region.",
   }
