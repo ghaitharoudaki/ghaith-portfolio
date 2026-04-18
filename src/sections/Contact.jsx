@@ -33,7 +33,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-white">
+    <section id="contact" className="py-24 bg-white dark:bg-slate-900">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Section header */}
@@ -47,7 +47,7 @@ export default function Contact() {
           <span className="font-mono text-ocean-500 text-sm font-medium tracking-widest uppercase">
             04. Contact
           </span>
-          <h2 className="text-4xl font-bold text-slate-900 mt-2">
+          <h2 className="text-4xl font-bold text-slate-900 dark:text-slate-50 mt-2">
             Get In Touch
           </h2>
           <div className="mt-3 w-12 h-1 bg-ocean-400 rounded-full" />
@@ -62,17 +62,17 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-4">
               Let's work together
             </h3>
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-slate-500 dark:text-slate-400 leading-relaxed mb-8">
               I'm currently open to new opportunities — whether it's a part-time role,
               freelance project, or just a conversation about tech and cybersecurity.
               My inbox is always open!
             </p>
 
-            <div className="flex items-center gap-3 text-slate-500 mb-8">
-              <div className="p-2 rounded-lg bg-ocean-50 border border-ocean-100">
+            <div className="flex items-center gap-3 text-slate-500 dark:text-slate-400 mb-8">
+              <div className="p-2 rounded-lg bg-ocean-50 dark:bg-ocean-950 border border-ocean-100 dark:border-ocean-900">
                 <MapPin size={16} className="text-ocean-500" />
               </div>
               <span>Damascus, Syria</span>
@@ -83,17 +83,17 @@ export default function Contact() {
               {contactLinks.map((link) => (
                 <div
                   key={link.label}
-                  className="flex items-center justify-between p-4 rounded-xl border border-slate-200 hover:border-ocean-300 transition-colors group"
+                  className="flex items-center justify-between p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-ocean-300 dark:hover:border-ocean-400 transition-colors group bg-white dark:bg-slate-800"
                 >
                   <div>
-                    <p className="text-xs text-slate-400 font-mono mb-0.5">
+                    <p className="text-xs text-slate-400 dark:text-slate-500 font-mono mb-0.5">
                       {link.label}
                     </p>
                     <a
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-slate-700 text-sm font-medium hover:text-ocean-500 transition-colors"
+                      className="text-slate-700 dark:text-slate-200 text-sm font-medium hover:text-ocean-500 hover:dark:text-ocean-400 transition-colors"
                     >
                       {link.value}
                     </a>
@@ -101,7 +101,7 @@ export default function Contact() {
                   {link.copyable && (
                     <button
                       onClick={handleCopy}
-                      className="p-2 rounded-lg hover:bg-ocean-50 text-slate-400 hover:text-ocean-500 transition-colors"
+                      className="p-2 rounded-lg hover:bg-ocean-50 dark:hover:bg-slate-700 text-slate-400 dark:text-slate-500 hover:text-ocean-500 hover:dark:text-ocean-400 transition-colors"
                     >
                       {copied ? <Check size={15} /> : <Copy size={15} />}
                     </button>
@@ -117,19 +117,19 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative rounded-2xl border border-ocean-200 bg-gradient-to-br from-ocean-50 to-white p-10 overflow-hidden"
+            className="relative rounded-2xl border border-ocean-200 dark:border-ocean-800 bg-gradient-to-br from-ocean-50 dark:from-slate-800 to-white dark:to-slate-700 p-10 overflow-hidden"
           >
             {/* Background glow */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-ocean-300/20 blur-2xl" />
+            <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-ocean-300/20 dark:bg-ocean-400/10 blur-2xl" />
 
             <div className="relative z-10">
               <div className="w-12 h-12 rounded-xl bg-ocean-500 flex items-center justify-center mb-6 glow">
                 <Mail size={22} className="text-white" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-3">
                 Send me an email
               </h3>
-              <p className="text-slate-500 text-sm leading-relaxed mb-8">
+              <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-8">
                 Prefer email? Just click below and shoot me a message.
               </p>
               <a

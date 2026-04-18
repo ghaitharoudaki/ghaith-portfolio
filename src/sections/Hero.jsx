@@ -39,7 +39,7 @@ const socialLinks = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-slate-900">
       {/* Animated grid background */}
       <div
         className="absolute inset-0 opacity-[0.04]"
@@ -64,7 +64,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-ocean-200 bg-ocean-50 text-ocean-600 text-sm font-medium"
+          className="mb-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-ocean-200 dark:border-ocean-900 bg-ocean-50 dark:bg-ocean-950 text-ocean-600 dark:text-ocean-400 text-sm font-medium"
         >
           <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
           Available for opportunities
@@ -75,7 +75,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl md:text-7xl font-bold text-slate-900 tracking-tight mb-3"
+          className="text-4xl md:text-7xl font-bold text-slate-900 dark:text-slate-50 tracking-tight mb-3"
         >
           Ghaith{" "}
           <span className="text-gradient">Aroudaki</span>
@@ -86,7 +86,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-lg md:text-2xl font-mono text-slate-500 mb-4 h-8"
+          className="text-lg md:text-2xl font-mono text-slate-500 dark:text-slate-400 mb-4 h-8"
         >
           <TypeAnimation
             sequence={[
@@ -108,7 +108,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="max-w-xl text-slate-500 text-sm md:text-lg leading-relaxed mb-8"
+          className="max-w-xl text-slate-500 dark:text-slate-400 text-sm md:text-lg leading-relaxed mb-8"
         >
           I build fast, beautiful, and secure web experiences.
           Combining frontend craftsmanship with a cybersecurity mindset
@@ -130,7 +130,7 @@ export default function Hero() {
           </a>
           <a
             href="#contact"
-            className="px-6 py-3 rounded-xl border border-slate-300 text-slate-700 font-semibold hover:border-ocean-400 hover:text-ocean-500 transition-all duration-300"
+            className="px-6 py-3 rounded-xl border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold hover:border-ocean-400 hover:text-ocean-500 hover:dark:text-ocean-400 transition-all duration-300"
           >
             Get In Touch
           </a>
@@ -150,7 +150,7 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="p-3 rounded-xl border border-slate-200 text-slate-500 hover:border-ocean-300 hover:text-ocean-500 hover:bg-ocean-50 transition-all duration-300"
+              className="p-3 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:border-ocean-300 hover:text-ocean-500 hover:bg-ocean-50 dark:hover:bg-slate-800 transition-all duration-300"
             >
               {svg}
             </a>
@@ -167,7 +167,7 @@ export default function Hero() {
           {techBadges.map((badge) => (
             <span
               key={badge.label}
-              className={`px-3 py-1 rounded-full border text-xs font-mono font-medium ${badge.color}`}
+              className={`px-3 py-1 rounded-full border text-xs font-mono font-medium ${badge.color} dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300`}
             >
               {badge.label}
             </span>
@@ -180,7 +180,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-400"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-400 dark:text-slate-500"
       >
         <span className="text-xs font-mono tracking-widest uppercase">Scroll</span>
         <motion.div

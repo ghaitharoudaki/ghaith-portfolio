@@ -9,7 +9,7 @@ const languages = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-slate-50">
+    <section id="about" className="py-24 bg-slate-50 dark:bg-slate-800">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Section header */}
@@ -23,7 +23,7 @@ export default function About() {
           <span className="font-mono text-ocean-500 text-sm font-medium tracking-widest uppercase">
             01. About
           </span>
-          <h2 className="text-4xl font-bold text-slate-900 mt-2">
+          <h2 className="text-4xl font-bold text-slate-900 dark:text-slate-50 mt-2">
             Who I Am
           </h2>
           <div className="mt-3 w-12 h-1 bg-ocean-400 rounded-full" />
@@ -38,12 +38,12 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-slate-600 text-lg leading-relaxed mb-6">
+            <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed mb-6">
               I'm a <span className="text-ocean-500 font-semibold">Frontend Developer</span> and{" "}
               <span className="text-ocean-500 font-semibold">IT & Software Engineering student</span> with
               a passion for building interactive, user-centric web applications.
             </p>
-            <p className="text-slate-600 text-lg leading-relaxed mb-8">
+            <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed mb-8">
               I combine frontend craftsmanship with a cybersecurity mindset — building
               things that not only look great but are built to be secure and efficient.
               I enjoy turning complex problems into clean, intuitive digital experiences.
@@ -73,15 +73,15 @@ export default function About() {
 
             {/* Languages */}
             <div className="mt-10">
-              <h3 className="text-slate-800 font-semibold mb-4">Languages</h3>
+              <h3 className="text-slate-800 dark:text-slate-100 font-semibold mb-4">Languages</h3>
               <div className="flex flex-col gap-4">
                 {languages.map((lang) => (
                   <div key={lang.name}>
                     <div className="flex justify-between mb-1">
-                      <span className="text-sm font-medium text-slate-700">{lang.name}</span>
-                      <span className="text-sm text-slate-400 font-mono">{lang.level}</span>
+                      <span className="text-sm font-medium text-slate-700 dark:text-slate-200">{lang.name}</span>
+                      <span className="text-sm text-slate-400 dark:text-slate-500 font-mono">{lang.level}</span>
                     </div>
-                    <div className="h-1.5 bg-slate-200 rounded-full overflow-hidden">
+                    <div className="h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${lang.percent}%` }}
@@ -137,7 +137,7 @@ export default function About() {
 function SkillGroup({ title, skills }) {
   return (
     <div>
-      <h3 className="text-slate-800 font-semibold mb-5 flex items-center gap-2">
+      <h3 className="text-slate-800 dark:text-slate-100 font-semibold mb-5 flex items-center gap-2">
         <span className="w-2 h-2 rounded-full bg-ocean-400 inline-block" />
         {title}
       </h3>
@@ -145,10 +145,10 @@ function SkillGroup({ title, skills }) {
         {skills.map((skill) => (
           <div key={skill.name}>
             <div className="flex justify-between mb-1">
-              <span className="text-sm font-medium text-slate-700">{skill.name}</span>
-              <span className="text-sm text-slate-400 font-mono">{skill.level}%</span>
+              <span className="text-sm font-medium text-slate-700 dark:text-slate-200">{skill.name}</span>
+              <span className="text-sm text-slate-400 dark:text-slate-500 font-mono">{skill.level}%</span>
             </div>
-            <div className="h-1.5 bg-slate-200 rounded-full overflow-hidden">
+            <div className="h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
                 whileInView={{ width: `${skill.level}%` }}

@@ -41,26 +41,26 @@ function TimelineItem({ item, index }) {
       className="relative pl-8 pb-10 last:pb-0"
     >
       {/* Line */}
-      <div className="absolute left-0 top-0 bottom-0 w-px bg-slate-200" />
+      <div className="absolute left-0 top-0 bottom-0 w-px bg-slate-200 dark:bg-slate-700" />
 
       {/* Dot */}
-      <div className="absolute left-[-5px] top-1.5 w-2.5 h-2.5 rounded-full bg-ocean-400 border-2 border-white ring-2 ring-ocean-200" />
+      <div className="absolute left-[-5px] top-1.5 w-2.5 h-2.5 rounded-full bg-ocean-400 border-2 border-white dark:border-slate-800 ring-2 ring-ocean-200 dark:ring-ocean-900" />
 
-      <div className="group p-6 rounded-2xl border border-slate-200 bg-white hover:border-ocean-300 hover:shadow-lg hover:shadow-ocean-500/5 transition-all duration-300">
+      <div className="group p-6 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-700 hover:border-ocean-300 hover:shadow-lg hover:shadow-ocean-500/5 transition-all duration-300">
         <div className="flex items-start justify-between gap-4 mb-2">
           <div>
-            <h3 className="font-semibold text-slate-900 group-hover:text-ocean-500 transition-colors">
+            <h3 className="font-semibold text-slate-900 dark:text-slate-100 group-hover:text-ocean-500 transition-colors">
               {item.title}
             </h3>
-            <p className="text-ocean-500 text-sm font-medium mt-0.5">
+            <p className="text-ocean-500 dark:text-ocean-400 text-sm font-medium mt-0.5">
               {item.organization}
             </p>
           </div>
-          <span className="shrink-0 px-3 py-1 rounded-full bg-slate-50 border border-slate-200 text-slate-500 text-xs font-mono">
+          <span className="shrink-0 px-3 py-1 rounded-full bg-slate-50 dark:bg-slate-600 border border-slate-200 dark:border-slate-600 text-slate-500 dark:text-slate-300 text-xs font-mono">
             {item.period}
           </span>
         </div>
-        <p className="text-slate-500 text-sm leading-relaxed mt-3">
+        <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mt-3">
           {item.description}
         </p>
       </div>
@@ -70,7 +70,7 @@ function TimelineItem({ item, index }) {
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 bg-slate-50">
+    <section id="experience" className="py-24 bg-slate-50 dark:bg-slate-800">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Section header */}
@@ -84,7 +84,7 @@ export default function Experience() {
           <span className="font-mono text-ocean-500 text-sm font-medium tracking-widest uppercase">
             03. Experience
           </span>
-          <h2 className="text-4xl font-bold text-slate-900 mt-2">
+          <h2 className="text-4xl font-bold text-slate-900 dark:text-slate-50 mt-2">
             Where I've Been
           </h2>
           <div className="mt-3 w-12 h-1 bg-ocean-400 rounded-full" />
@@ -94,10 +94,10 @@ export default function Experience() {
           {/* Work */}
           <div>
             <div className="flex items-center gap-2 mb-8">
-              <div className="p-2 rounded-lg bg-ocean-50 border border-ocean-100">
+              <div className="p-2 rounded-lg bg-ocean-50 dark:bg-ocean-950 border border-ocean-100 dark:border-ocean-900">
                 <Briefcase size={16} className="text-ocean-500" />
               </div>
-              <h3 className="font-semibold text-slate-800">Work Experience</h3>
+              <h3 className="font-semibold text-slate-800 dark:text-slate-100">Work Experience</h3>
             </div>
             {experiences.map((item, i) => (
               <TimelineItem key={i} item={item} index={i} />
@@ -107,10 +107,10 @@ export default function Experience() {
           {/* Education */}
           <div>
             <div className="flex items-center gap-2 mb-8">
-              <div className="p-2 rounded-lg bg-ocean-50 border border-ocean-100">
+              <div className="p-2 rounded-lg bg-ocean-50 dark:bg-ocean-950 border border-ocean-100 dark:border-ocean-900">
                 <GraduationCap size={16} className="text-ocean-500" />
               </div>
-              <h3 className="font-semibold text-slate-800">Education</h3>
+              <h3 className="font-semibold text-slate-800 dark:text-slate-100">Education</h3>
             </div>
             {education.map((item, i) => (
               <TimelineItem key={i} item={item} index={i} />

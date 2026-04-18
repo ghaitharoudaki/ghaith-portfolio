@@ -38,7 +38,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 bg-white">
+    <section id="projects" className="py-24 bg-white dark:bg-slate-900">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Section header */}
@@ -52,7 +52,7 @@ export default function Projects() {
           <span className="font-mono text-ocean-500 text-sm font-medium tracking-widest uppercase">
             02. Projects
           </span>
-          <h2 className="text-4xl font-bold text-slate-900 mt-2">
+          <h2 className="text-4xl font-bold text-slate-900 dark:text-slate-50 mt-2">
             Things I've Built
           </h2>
           <div className="mt-3 w-12 h-1 bg-ocean-400 rounded-full" />
@@ -67,7 +67,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative rounded-2xl border border-slate-200 bg-white hover:border-ocean-300 hover:shadow-xl hover:shadow-ocean-500/5 transition-all duration-300 overflow-hidden"
+              className="group relative rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-ocean-300 hover:shadow-xl hover:shadow-ocean-500/5 transition-all duration-300 overflow-hidden"
             >
               {/* Top accent line */}
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-ocean-400 to-ocean-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -93,11 +93,11 @@ export default function Projects() {
                       </span>
                     </div>
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-ocean-500 transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-3 group-hover:text-ocean-500 transition-colors duration-300">
                       {project.title}
                     </h3>
 
-                    <p className="text-slate-500 leading-relaxed mb-6 max-w-2xl">
+                    <p className="text-slate-500 dark:text-slate-400 leading-relaxed mb-6 max-w-2xl">
                       {project.description}
                     </p>
 
@@ -106,7 +106,7 @@ export default function Projects() {
                       {project.tech.map((tech) => (
                         <span
                           key={tech}
-                          className="px-3 py-1 rounded-full bg-slate-50 border border-slate-200 text-slate-600 text-xs font-mono"
+                          className="px-3 py-1 rounded-full bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 text-xs font-mono"
                         >
                           {tech}
                         </span>
@@ -132,7 +132,7 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 text-slate-600 text-sm font-medium hover:border-ocean-300 hover:text-ocean-500 transition-colors"
+                        className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-ocean-300 hover:text-ocean-500 hover:dark:text-ocean-400 transition-colors"
                       >
                         <Code2 size={15} />
                         Source
