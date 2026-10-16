@@ -26,7 +26,7 @@ export default function Ufo3dShape() {
       const scene = new THREE.Scene();
       const isCompact = window.matchMedia("(max-width: 767px)").matches;
       const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 1000);
-      camera.position.set(0, isCompact ? -0.15 : 0, isCompact ? 12.5 : 12.8);
+      camera.position.set(0, isCompact ? -0.15 : 0, isCompact ? 13.8 : 12.8);
 
       const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
       renderer.setSize(width, height);
@@ -34,8 +34,8 @@ export default function Ufo3dShape() {
       currentMount.appendChild(renderer.domElement);
 
       const ufoGroup = new THREE.Group();
-      ufoGroup.position.y = isCompact ? 2.05 : 1.72;
-      ufoGroup.scale.setScalar(isCompact ? 0.98 : 1.12);
+      ufoGroup.position.y = isCompact ? 1.9 : 1.72;
+      ufoGroup.scale.setScalar(isCompact ? 0.88 : 1.12);
 
       const darkMaterial = new THREE.MeshStandardMaterial({
         color: 0x2a2a2a,
@@ -162,7 +162,7 @@ export default function Ufo3dShape() {
         ufoGroup.rotation.z = Math.sin(elapsed * 1.5) * 0.03 + mouseY * 0.05;
         ufoGroup.rotation.x = Math.cos(elapsed * 1.1) * 0.02 - mouseY * 0.05;
         ufoGroup.position.y =
-          (isCompact ? 2.05 : 1.72) + Math.sin(elapsed * 1.8) * 0.15;
+          (isCompact ? 1.9 : 1.72) + Math.sin(elapsed * 1.8) * 0.15;
         beamMaterial.opacity = 0.8 + Math.sin(elapsed * 3) * 0.2;
         renderer.render(scene, camera);
         animationFrameId = requestAnimationFrame(animate);

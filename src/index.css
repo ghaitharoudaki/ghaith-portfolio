@@ -178,7 +178,7 @@ a {
 
 .hero-copy {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   max-width: 850px;
 }
 
@@ -251,6 +251,8 @@ a {
 }
 
 .hero-actions {
+  position: relative;
+  z-index: 4;
   display: flex;
   align-items: center;
   gap: 1.4rem;
@@ -306,7 +308,7 @@ a {
   position: absolute;
   top: 10%;
   right: 4vw;
-  z-index: 2;
+  z-index: 1;
   width: min(48vw, 680px);
   height: min(58vw, 680px);
   pointer-events: none;
@@ -733,18 +735,18 @@ a {
   .nav-links a { padding: 0.8rem 0; }
   .nav-menu { display: block; }
   .hero {
-    min-height: 700px;
-    padding: 7.5rem 1.2rem 1.5rem;
+    min-height: 680px;
+    padding: 7.5rem 1.2rem calc(1.5rem + env(safe-area-inset-bottom));
   }
   .hero h1 { font-size: clamp(4.8rem, 21vw, 7rem); }
   .hero-intro { max-width: 22rem; font-size: 1rem; }
   .hero-actions { gap: 1rem; }
   .ufo-three-scene {
     top: auto;
-    right: -2.5rem;
-    bottom: -2.25rem;
-    width: 22rem;
-    height: 23rem;
+    right: -1.25rem;
+    bottom: -4.75rem;
+    width: clamp(15rem, 74vw, 19rem);
+    height: clamp(16rem, 78vw, 20rem);
   }
   .hero-corner-bottom { left: 1.2rem; }
   .section { padding: 5rem 1.2rem; }
@@ -763,6 +765,22 @@ a {
   .project-links { flex-direction: row; align-items: start; }
   .highlight-stamp { width: 5.5rem; height: 5.5rem; }
   .footer { flex-wrap: wrap; padding: 1.4rem 1.2rem; }
+}
+
+@media (max-width: 360px) {
+  .hero {
+    min-height: 650px;
+    padding-top: 7rem;
+  }
+
+  .hero h1 { font-size: clamp(4.4rem, 21vw, 5.7rem); }
+  .hero-intro { max-width: 18rem; }
+  .ufo-three-scene {
+    right: -1rem;
+    bottom: -4rem;
+    width: 15.5rem;
+    height: 16rem;
+  }
 }
 
 .dark {
