@@ -5,17 +5,21 @@ import Projects from "./sections/Projects";
 import Experience from "./sections/Experience";
 import Contact from "./sections/Contact";
 import Footer from "./components/Footer";
+import AnimatedBackground from "./components/AnimatedBackground";
 
 function App() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Experience />
-      <Contact />
-      <Footer />
+    <div className="min-h-screen relative">
+      <AnimatedBackground />
+      <div className="relative z-10">
+        <Navbar />
+        <Hero />
+        <About />
+        <Projects />
+        <Experience />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 }

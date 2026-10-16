@@ -1,8 +1,23 @@
 import { motion } from "framer-motion";
-import { desc } from "framer-motion/client";
 import { Briefcase, GraduationCap } from "lucide-react";
 
 const experiences = [
+  {
+    type: "work",
+    title: "Co-Founder & Software Engineer",
+    organization: "Crewly",
+    period: "2024 – Present",
+    description:
+      "Co-founding and engineering digital solutions with a dedicated team of software engineers, building scalable web applications, branding engines, and custom software systems for clients worldwide.",
+  },
+  {
+    type: "work",
+    title: "Freelance Frontend Developer",
+    organization: "Self-Employed",
+    period: "2025 – Present",
+    description:
+      "Providing freelance frontend development services for various clients, mainly in the MENA region. Specializing in React, TypeScript, and modern web technologies.",
+  },
   {
     type: "work",
     title: "Finance & Operations Intern",
@@ -11,14 +26,6 @@ const experiences = [
     description:
       "Completed a 200-hour intensive internship rotating through Finance, HR, and Supply Chain Management departments. Demonstrated strong teamwork and communication skills while consistently exceeding performance expectations.",
   },
-  {
-    type: "work",
-    title: "Freelance Frontend Developer",
-    organization: "Self-Employed",
-    period: "2025 – Present",
-    description:
-      "Provided freelance frontend development services for various clients, Mainly in the MENA region.",
-  }
 ];
 
 const education = [
@@ -27,11 +34,11 @@ const education = [
     title: "B.Sc. Information Technology & Software Engineering",
     organization: "Syrian Private University",
     period: "2023 – 2028",
+    description: "Focused on software development, data structures, algorithms, and cybersecurity fundamentals.",
   },
 ];
 
 function TimelineItem({ item, index }) {
-  const isWork = item.type === "work";
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
@@ -41,26 +48,32 @@ function TimelineItem({ item, index }) {
       className="relative pl-8 pb-10 last:pb-0"
     >
       {/* Line */}
-      <div className="absolute left-0 top-0 bottom-0 w-px bg-slate-200 dark:bg-slate-700" />
+      <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-accent-indigo/50 via-accent-cyan/30 to-transparent" />
 
       {/* Dot */}
-      <div className="absolute left-[-5px] top-1.5 w-2.5 h-2.5 rounded-full bg-ocean-400 border-2 border-white dark:border-slate-800 ring-2 ring-ocean-200 dark:ring-ocean-900" />
+      <motion.div
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3, delay: index * 0.1 + 0.2 }}
+        className="absolute left-[-5px] top-2 w-2.5 h-2.5 rounded-full bg-accent-indigo ring-4 ring-accent-indigo/20"
+      />
 
-      <div className="group p-6 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-700 hover:border-ocean-300 hover:shadow-lg hover:shadow-ocean-500/5 transition-all duration-300">
-        <div className="flex items-start justify-between gap-4 mb-2">
+      <div className="group p-6 rounded-2xl glass-card hover:glass-card-hover transition-all duration-300">
+        <div className="flex items-start justify-between gap-4 mb-3">
           <div>
-            <h3 className="font-semibold text-slate-900 dark:text-slate-100 group-hover:text-ocean-500 transition-colors">
+            <h3 className="font-bold text-text-primary text-lg group-hover:text-gradient transition-colors">
               {item.title}
             </h3>
-            <p className="text-ocean-500 dark:text-ocean-400 text-sm font-medium mt-0.5">
+            <p className="text-accent text-sm font-semibold mt-1">
               {item.organization}
             </p>
           </div>
-          <span className="shrink-0 px-3 py-1 rounded-full bg-slate-50 dark:bg-slate-600 border border-slate-200 dark:border-slate-600 text-slate-500 dark:text-slate-300 text-xs font-mono">
+          <span className="shrink-0 px-3 py-1 rounded-lg bg-surface-light/50 border border-white/5 text-text-secondary text-xs font-mono">
             {item.period}
           </span>
         </div>
-        <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mt-3">
+        <p className="text-text-secondary text-sm leading-relaxed">
           {item.description}
         </p>
       </div>
@@ -70,9 +83,8 @@ function TimelineItem({ item, index }) {
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 bg-slate-50 dark:bg-slate-800">
+    <section id="experience" className="py-24 relative">
       <div className="max-w-6xl mx-auto px-6">
-
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -81,23 +93,25 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <span className="font-mono text-ocean-500 text-sm font-medium tracking-widest uppercase">
+          <span className="font-mono text-accent text-sm font-medium tracking-widest uppercase">
             03. Experience
           </span>
-          <h2 className="text-4xl font-bold text-slate-900 dark:text-slate-50 mt-2">
-            Where I've Been
+          <h2 className="text-5xl font-black text-text-primary font-sans mt-3">
+            Professional Journey
           </h2>
-          <div className="mt-3 w-12 h-1 bg-ocean-400 rounded-full" />
+          <div className="mt-4 w-16 h-1 bg-gradient-to-r from-accent to-accent-light rounded-full" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-16">
           {/* Work */}
           <div>
-            <div className="flex items-center gap-2 mb-8">
-              <div className="p-2 rounded-lg bg-ocean-50 dark:bg-ocean-950 border border-ocean-100 dark:border-ocean-900">
-                <Briefcase size={16} className="text-ocean-500" />
+            <div className="flex items-center gap-3 mb-8">
+              <div className="p-3 rounded-lg bg-accent/10 border border-accent/20">
+                <Briefcase size={20} className="text-accent" />
               </div>
-              <h3 className="font-semibold text-slate-800 dark:text-slate-100">Work Experience</h3>
+              <h3 className="font-bold text-text-primary font-sans text-xl">
+                Work Experience
+              </h3>
             </div>
             {experiences.map((item, i) => (
               <TimelineItem key={i} item={item} index={i} />
@@ -106,11 +120,11 @@ export default function Experience() {
 
           {/* Education */}
           <div>
-            <div className="flex items-center gap-2 mb-8">
-              <div className="p-2 rounded-lg bg-ocean-50 dark:bg-ocean-950 border border-ocean-100 dark:border-ocean-900">
-                <GraduationCap size={16} className="text-ocean-500" />
+            <div className="flex items-center gap-3 mb-8">
+              <div className="p-3 rounded-lg bg-accent-light/10 border border-accent-light/20">
+                <GraduationCap size={20} className="text-accent-light" />
               </div>
-              <h3 className="font-semibold text-slate-800 dark:text-slate-100">Education</h3>
+              <h3 className="font-bold text-text-primary font-sans text-xl">Education</h3>
             </div>
             {education.map((item, i) => (
               <TimelineItem key={i} item={item} index={i} />
