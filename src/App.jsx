@@ -183,21 +183,23 @@ function UfoVisual() {
         "--ufo-tilt-y": `${tilt.y * -5}deg`,
       }}
     >
-      <span className="ufo-beam" />
-      <div className="ufo">
-        <div className="ufo-dome">
-          <span />
+      <div className="ufo-rig">
+        <span className="ufo-beam" />
+        <div className="ufo">
+          <div className="ufo-dome">
+            <span />
+          </div>
+          <div className="ufo-body">
+            <span className="ufo-light ufo-light-one" />
+            <span className="ufo-light ufo-light-two" />
+            <span className="ufo-light ufo-light-three" />
+            <span className="ufo-light ufo-light-four" />
+            <span className="ufo-light ufo-light-five" />
+            <span className="ufo-light ufo-light-six" />
+          </div>
         </div>
-        <div className="ufo-body">
-          <span className="ufo-light ufo-light-one" />
-          <span className="ufo-light ufo-light-two" />
-          <span className="ufo-light ufo-light-three" />
-          <span className="ufo-light ufo-light-four" />
-          <span className="ufo-light ufo-light-five" />
-          <span className="ufo-light ufo-light-six" />
-        </div>
+        <span className="ufo-shadow" />
       </div>
-      <span className="ufo-shadow" />
     </div>
   );
 }
