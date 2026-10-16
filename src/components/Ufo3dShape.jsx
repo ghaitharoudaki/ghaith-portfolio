@@ -10,9 +10,7 @@ export default function Ufo3dShape() {
     const currentMount = mountRef.current;
     if (!currentMount) return undefined;
 
-    if (
-      window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 767px)").matches
-    ) {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return undefined;
     }
 
@@ -26,8 +24,9 @@ export default function Ufo3dShape() {
       const width = currentMount.clientWidth;
       const height = currentMount.clientHeight;
       const scene = new THREE.Scene();
+      const isCompact = window.matchMedia("(max-width: 767px)").matches;
       const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 1000);
-      camera.position.set(0, 0, 15);
+      camera.position.set(0, isCompact ? -0.15 : 0, isCompact ? 13.5 : 15);
 
       const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
       renderer.setSize(width, height);
@@ -35,7 +34,8 @@ export default function Ufo3dShape() {
       currentMount.appendChild(renderer.domElement);
 
       const ufoGroup = new THREE.Group();
-      ufoGroup.position.y = 2.3;
+      ufoGroup.position.y = isCompact ? 2.05 : 2.3;
+      ufoGroup.scale.setScalar(isCompact ? 0.92 : 1);
 
       const darkMaterial = new THREE.MeshStandardMaterial({
         color: 0x2a2a2a,
@@ -161,7 +161,8 @@ export default function Ufo3dShape() {
         ufoGroup.rotation.y = elapsed * 0.3 + mouseX * 0.15;
         ufoGroup.rotation.z = Math.sin(elapsed * 1.5) * 0.03 + mouseY * 0.05;
         ufoGroup.rotation.x = Math.cos(elapsed * 1.1) * 0.02 - mouseY * 0.05;
-        ufoGroup.position.y = 2.3 + Math.sin(elapsed * 1.8) * 0.15;
+        ufoGroup.position.y =
+          (isCompact ? 2.05 : 2.3) + Math.sin(elapsed * 1.8) * 0.15;
         beamMaterial.opacity = 0.8 + Math.sin(elapsed * 3) * 0.2;
         renderer.render(scene, camera);
         animationFrameId = requestAnimationFrame(animate);
