@@ -13,6 +13,7 @@ import {
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Ufo3dShape from "./components/Ufo3dShape";
 
 const projects = [
   {
@@ -159,51 +160,6 @@ function ArrowLink({ href, children, muted = false }) {
   );
 }
 
-function UfoVisual() {
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
-
-  const handlePointerMove = (event) => {
-    const bounds = event.currentTarget.getBoundingClientRect();
-    const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
-    const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
-    setTilt({ x: Math.max(-1, Math.min(1, x)), y: Math.max(-1, Math.min(1, y)) });
-  };
-
-  const handlePointerLeave = () => setTilt({ x: 0, y: 0 });
-
-  return (
-    <div
-      className="ufo-scene"
-      aria-label="Interactive 3D UFO illustration"
-      role="img"
-      onPointerMove={handlePointerMove}
-      onPointerLeave={handlePointerLeave}
-      style={{
-        "--ufo-tilt-x": `${tilt.x * 7}deg`,
-        "--ufo-tilt-y": `${tilt.y * -5}deg`,
-      }}
-    >
-      <div className="ufo-rig">
-        <span className="ufo-beam" />
-        <div className="ufo">
-          <div className="ufo-dome">
-            <span />
-          </div>
-          <div className="ufo-body">
-            <span className="ufo-light ufo-light-one" />
-            <span className="ufo-light ufo-light-two" />
-            <span className="ufo-light ufo-light-three" />
-            <span className="ufo-light ufo-light-four" />
-            <span className="ufo-light ufo-light-five" />
-            <span className="ufo-light ufo-light-six" />
-          </div>
-        </div>
-        <span className="ufo-shadow" />
-      </div>
-    </div>
-  );
-}
-
 function Hero() {
   return (
     <section className="hero" id="top">
@@ -241,7 +197,7 @@ function Hero() {
           </a>
         </motion.div>
       </motion.div>
-      <UfoVisual />
+      <Ufo3dShape />
     </section>
   );
 }
